@@ -36,6 +36,8 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  slider_controller: ^0.0.4
+  syncfusion_flutter_sliders: ^20.2.48
   getwidget: ^2.0.4
   awesome_dropdown: ^0.0.4
   snippet_coder_utils: ^1.0.12
