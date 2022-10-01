@@ -11,14 +11,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        title: Text('Splash Screen'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(''),
-      ),
+      body: Stack(children: [
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/back1.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Center(
+            child: Image.asset(
+              'assets/logo.png',
+              height: 280,
+            ),
+          ),
+        ),
+      ]),
     );
   }
 }
