@@ -11,22 +11,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/back1.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Center(
-            child: Image.asset(
-              'assets/logo.png',
-              height: 280,
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/back1.jpg"),
+            fit: BoxFit.cover,
           ),
         ),
-      ]),
+        child: Container(
+            alignment: Alignment.topCenter,
+            child: Image.asset(
+              "assets/logo.png",
+              width: 250,
+              height: 400,
+            )),
+      ),
     );
   }
 }
