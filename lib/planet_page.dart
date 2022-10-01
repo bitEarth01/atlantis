@@ -27,8 +27,8 @@ class _PlanetPageState extends State<PlanetPage> {
               top: MediaQuery.of(context).size.height / 3,
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text('BITGLOBE',
+                  children: const [
+                    Text('GLOBE',
                         style: TextStyle(
                             fontSize: 40,
                             color: Colors.white,
@@ -38,24 +38,25 @@ class _PlanetPageState extends State<PlanetPage> {
             Align(
                 alignment: Alignment.center,
                 child: Transform.translate(
-                    offset: Offset(0, 80), child: CircularProgressIndicator())),
+                    offset: const Offset(0, 80),
+                    child: const CircularProgressIndicator())),
             Positioned(
               top:
-                  MediaQuery.of(context).size.height / (!isInteracting ? 3 : 5),
+                  MediaQuery.of(context).size.height / (!isInteracting ? 3 : 3),
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    isInteracting = !isInteracting;
+                    isInteracting = isInteracting;
                   });
                 },
                 child: !isInteracting
                     ? Planet(
-                        key: Key('Planet1'),
+                        key: const Key('Planet1'),
                         interative: false,
                       )
                     : Planet(
-                        key: Key('Planet2'),
-                        interative: true,
+                        key: const Key('Planet2'),
+                        interative: false,
                       ),
               ),
             ),
