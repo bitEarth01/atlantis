@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dropdown/awesome_dropdown.dart';
-import 'package:getwidget/getwidget.dart';
-import 'package:snippet_coder_utils/FormHelper.dart';
-import 'package:snippet_coder_utils/ProgressHUD.dart';
-import 'package:snippet_coder_utils/hex_color.dart';
-import 'package:snippet_coder_utils/list_helper.dart';
-import 'package:snippet_coder_utils/multi_images_utils.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:sample_app/slider.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -15,18 +11,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<dynamic> countries = [];
+  //List<dynamic> countries = [];
 
-  String? countryId;
-
-  @override
-  void InitState() {
-    super.initState();
-    this.countries.add({"id": 1, "label": "Alaska"});
-    this.countries.add({"id": 2, "label": "Western Canada"});
-  }
-
-  List<String> _list = ["Alaska", "Western Canada", "India"];
+  final List<String> items = [
+    'Alaska',
+  ];
+  String? selectedValue;
 
   @override
   Widget build(BuildContext context) {
@@ -45,70 +35,111 @@ class _HomePageState extends State<HomePage> {
                 child: Image.asset(
                   "assets/logo.png",
                   width: 250,
-                  height: 400,
+                  height: 350,
                 )),
-            /*FormHelper.dropDownWidget(
-              context,
-              "Select Country",
-              this.countryId,
-              this.countries,
-              (onChangedVal) {
-                this.countryId = onChangedVal;
-              },
-              (onValidateVal) {
-                if (onValidateVal == null) {
-                  return 'Please Select Country';
-                }
-              },
-              borderColor: Colors.black,
-              borderFocusColor: Colors.black,
-              borderRadius: 10,
-              optionValue: "id",
-              optionLabel: "label",*/
-
-            AwesomeDropDown(
-              dropDownList: _list,
-              numOfListItemToShow: 2,
-              elevation: 3,
-              dropDownIcon: Icon(Icons.arrow_drop_down_circle),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: ElevatedButton(
-                    child: Image.asset(
-                      'assets/globey.jpeg',
-                      height: 40,
-                      width: 40,
+            Container(
+              alignment: Alignment.center,
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton2(
+                  isExpanded: true,
+                  hint: Row(
+                    children: const [
+                      SizedBox(
+                        width: 116,
+                        child: Text(
+                          'Select Country',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            //alignSelf: Alignment.topLeft,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                  items: items
+                      .map((item) => DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ))
+                      .toList(),
+                  value: selectedValue,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedValue = value as String;
+                    });
+                  },
+                  icon: const Icon(
+                    Icons.arrow_drop_down,
+                  ),
+                  iconSize: 14,
+                  iconEnabledColor: Colors.black,
+                  iconDisabledColor: Colors.black,
+                  buttonHeight: 50,
+                  buttonWidth: 160,
+                  buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                  buttonDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(
+                      color: Colors.black26,
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const signin()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.only(
-                          right: 15, left: 15, top: 15, bottom: 15),
-                      elevation: 15,
-                      shadowColor: Color.fromARGB(255, 40, 9, 243),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                    )),
+                    color: Colors.white,
+                  ),
+                  buttonElevation: 2,
+                  itemHeight: 40,
+                  itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                  dropdownMaxHeight: 200,
+                  dropdownWidth: 200,
+                  dropdownPadding: null,
+                  dropdownDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: Colors.white,
+                  ),
+                  dropdownElevation: 8,
+                  scrollbarRadius: const Radius.circular(40),
+                  scrollbarThickness: 6,
+                  scrollbarAlwaysShow: true,
+                  offset: const Offset(-20, 0),
+                ),
               ),
             ),
+            if (selectedValue != null)
+              Padding(
+                padding: const EdgeInsets.all(90.0),
+                child: Container(
+                  child: ElevatedButton(
+                      child: Icon(Icons.arrow_forward),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const slider()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.only(
+                            right: 15, left: 15, top: 15, bottom: 15),
+                        elevation: 15,
+                        shadowColor: Color.fromARGB(255, 40, 9, 243),
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                      )),
+                ),
+              ),
           ]),
         ),
       ),
     );
-  }
-}
-
-class signin extends StatelessWidget {
-  const signin({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
