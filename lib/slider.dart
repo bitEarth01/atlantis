@@ -1,15 +1,14 @@
-import 'package:sample_app/finalpage.dart';
-
-import 'Home.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
-import 'package:slider_controller/slider_controller.dart';
 
 class slider extends StatefulWidget {
   const slider({super.key});
   @override
   State<slider> createState() => _sliderState();
 }
+
+int x = 0;
+int y = 0;
 
 class Person {
   final int year;
@@ -24,8 +23,6 @@ class _sliderState extends State<slider> {
   double value = 0;
   @override
   Widget build(BuildContext context) {
-    int x = 0;
-    int y = 0;
     return Container(
         child: Scaffold(
       backgroundColor: const Color.fromARGB(255, 60, 52, 52),
@@ -177,9 +174,10 @@ class _sliderState extends State<slider> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        new MaterialPageRoute(
-                            builder: (context) =>
-                                new finalpage(person: Person(x, y))),
+                        MaterialPageRoute(
+                            builder: (context) => finalpage(
+                                  person: Person(x, y),
+                                )),
                       );
                     },
                   ),
@@ -325,5 +323,135 @@ class GradientRectSliderTrackShape extends SliderTrackShape
       ),
       rightTrackPaint,
     );
+  }
+}
+
+double dataFunction(int a, int b) {
+  double c = 0;
+  if (a == 2020) {
+    c = 0.208;
+  } else if (b == 2030) {
+    if (b == 5) {
+      c = 0.258;
+    } else {
+      c = 0.248;
+    }
+  } else if (a == 2040) {
+    if (b == 1) {
+      c = 0.288;
+    } else if (b == 2 || b == 3) {
+      c = 0.298;
+    } else if (b == 5) {
+      c = 0.318;
+    }
+  } else if (a == 2050) {
+    if (b == 1) {
+      c = 0.338;
+    } else if (b == 2) {
+      c = 0.358;
+    } else if (b == 3) {
+      c = 0.368;
+    } else if (b == 5) {
+      c = 0.388;
+    }
+  } else if (a == 2060) {
+    if (b == 1) {
+      c = 0.368;
+    } else if (b == 2) {
+      c = 0.418;
+    } else if (b == 3) {
+      c = 0.438;
+    } else if (b == 5) {
+      c = 0.468;
+    }
+  } else if (a == 2070) {
+    if (b == 1) {
+      c = 0.418;
+    } else if (b == 2) {
+      c = 0.488;
+    } else if (b == 3) {
+      c = 0.528;
+    } else if (b == 5) {
+      c = 0.558;
+    }
+  } else if (a == 2080) {
+    if (b == 1) {
+      c = 0.458;
+    } else if (b == 2) {
+      c = 0.558;
+    } else if (b == 3) {
+      c = 0.618;
+    } else if (b == 5) {
+      c = 0.668;
+    }
+  } else if (a == 2090) {
+    if (b == 1) {
+      c = 0.508;
+    } else if (b == 2) {
+      c = 0.638;
+    } else if (b == 3) {
+      c = 0.718;
+    } else if (b == 5) {
+      c = 0.788;
+    }
+  } else if (a == 2100) {
+    if (b == 1) {
+      c = 0.538;
+    } else if (b == 2) {
+      c = 0.718;
+    } else if (b == 3) {
+      c = 0.838;
+    } else if (b == 5) {
+      c = 0.928;
+    }
+  }
+  return c;
+}
+
+class finalpage extends StatefulWidget {
+  const finalpage({super.key, required Person person});
+
+  @override
+  State<finalpage> createState() => _finalpageState();
+}
+
+class _finalpageState extends State<finalpage> {
+  //double z = dataFunction(x, y);
+  String last = ((dataFunction(x, y) / 213.308) * 100).toStringAsFixed(2);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: Scaffold(
+            backgroundColor: const Color.fromARGB(255, 60, 52, 52),
+            body: SafeArea(
+                child: Stack(alignment: Alignment.topLeft, children: [
+              IconButton(
+                iconSize: 38,
+                color: const Color.fromARGB(255, 237, 230, 230),
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                  debugPrint('$last');
+                },
+              ),
+              Column(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Center(
+                      child: Text(
+                        "Land Lost is",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ]))));
   }
 }
