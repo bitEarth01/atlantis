@@ -11,29 +11,29 @@ class slider extends StatefulWidget {
 
 class _sliderState extends State<slider> {
   double _value = 2022;
-  double _newvalue = 2;
+  //double _newvalue = 2;
   double value = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
         child: Scaffold(
-      backgroundColor: Color.fromARGB(255, 60, 52, 52),
+      backgroundColor: const Color.fromARGB(255, 60, 52, 52),
       body: SafeArea(
         child: Stack(
           alignment: Alignment.topLeft,
           children: [
             IconButton(
               iconSize: 38,
-              color: Color.fromARGB(255, 237, 230, 230),
-              icon: Icon(Icons.arrow_back),
+              color: const Color.fromARGB(255, 237, 230, 230),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.pop(context);
               },
             ),
             Column(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 10),
                   child: Center(
                     child: Text(
                       "Input Parameters",
@@ -51,7 +51,7 @@ class _sliderState extends State<slider> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 180),
+                  padding: const EdgeInsets.only(top: 180),
                   child: SfSlider(
                     showLabels: false,
                     enableTooltip: true,
@@ -60,12 +60,12 @@ class _sliderState extends State<slider> {
                     min: 2020,
                     max: 2099,
                     interval: 10,
-                    activeColor: Color.fromARGB(255, 187, 47, 234),
-                    inactiveColor: Color.fromARGB(255, 216, 205, 216),
+                    activeColor: const Color.fromARGB(255, 187, 47, 234),
+                    inactiveColor: const Color.fromARGB(255, 216, 205, 216),
                     thumbIcon: Container(
                       height: 30.0,
                       width: 10,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
                           color: Color.fromARGB(236, 225, 206, 206),
                           borderRadius: BorderRadius.all(Radius.circular(8.0))),
@@ -73,12 +73,15 @@ class _sliderState extends State<slider> {
                     onChanged: (dynamic value) {
                       setState(() {
                         _value = value;
+                        int x = _value.toInt();
+                        debugPrint('$x');
                       });
                     },
                   ),
+                  //print('The value of the input is: $_value');
                 ),
                 Container(
-                  child: Text('Year',
+                  child: const Text('Year',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
@@ -89,26 +92,33 @@ class _sliderState extends State<slider> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 280),
+                  padding: const EdgeInsets.only(top: 280),
                   child: SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      trackShape: GradientRectSliderTrackShape(),
+                      trackShape: const GradientRectSliderTrackShape(),
                     ),
                     child: Slider(
                       min: 0,
                       max: 8,
-                      thumbColor: Color.fromARGB(236, 225, 206, 206),
-                      inactiveColor: Color.fromARGB(255, 216, 205, 216),
+                      thumbColor: const Color.fromARGB(236, 225, 206, 206),
+                      inactiveColor: const Color.fromARGB(255, 216, 205, 216),
                       value: value,
                       onChanged: (val) {
                         setState(() {
                           value = val;
+                          int y = value.toInt();
+                          debugPrint('$y');
                         });
                       },
                     ),
                   ),
                 ),
-                Container(child: Text('Best'))
+                Container(
+                    child: const Text('SSP Conditon',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                            color: Colors.white))),
               ],
             ),
           ],
@@ -116,6 +126,13 @@ class _sliderState extends State<slider> {
       ),
     ));
   }
+}
+
+class Person {
+  final int year;
+  final int ssp;
+
+  Person(this.year, this.ssp);
 }
 
 class GradientRectSliderTrackShape extends SliderTrackShape
