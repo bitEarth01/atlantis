@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   //List<dynamic> countries = [];
 
   final List<String> items = [
-    'Alaska',
+    'Preset',
   ];
   String? selectedValue;
 
@@ -35,9 +35,10 @@ class _HomePageState extends State<HomePage> {
                 child: Image.asset(
                   "assets/logo.png",
                   width: 250,
-                  height: 350,
+                  height: 300,
                 )),
             Container(
+              width: 1000,
               alignment: Alignment.center,
               child: DropdownButtonHideUnderline(
                 child: DropdownButton2(
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   hint: Row(
                     children: const [
                       SizedBox(
-                        width: 116,
+                        width: 100,
                         child: Text(
                           'Select Country',
                           style: TextStyle(
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                   icon: const Icon(
                     Icons.arrow_drop_down,
                   ),
-                  iconSize: 14,
+                  iconSize: 30,
                   iconEnabledColor: Colors.black,
                   iconDisabledColor: Colors.black,
                   buttonHeight: 50,
@@ -115,26 +116,23 @@ class _HomePageState extends State<HomePage> {
             ),
             if (selectedValue != null)
               Padding(
-                padding: const EdgeInsets.all(90.0),
+                padding: const EdgeInsets.all(100.0),
                 child: Container(
-                  child: ElevatedButton(
-                      child: Icon(Icons.arrow_forward),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const slider()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.only(
-                            right: 15, left: 15, top: 15, bottom: 15),
-                        elevation: 15,
-                        shadowColor: Color.fromARGB(255, 40, 9, 243),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                      )),
+                  child: FloatingActionButton.extended(
+                    label: const Text('Continue'), // <-- Text
+                    backgroundColor: Colors.black,
+                    icon: const Icon(
+                      // <-- Icon
+                      Icons.arrow_forward,
+                      size: 30.0,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const slider()),
+                      );
+                    },
+                  ),
                 ),
               ),
           ]),
