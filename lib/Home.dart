@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:awesome_dropdown/awesome_dropdown.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:sample_app/slider.dart';
 
