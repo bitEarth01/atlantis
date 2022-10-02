@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class slider extends StatefulWidget {
   const slider({super.key});
@@ -452,6 +453,19 @@ class _finalpageState extends State<finalpage> {
                   ),
                 ],
               ),
+              Center(
+                  child: CircularPercentIndicator(
+                radius: 90.0,
+                animation: true,
+                animationDuration: 2000,
+                lineWidth: 20.0,
+                center: Text(
+                  last + '%',
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
+                percent: double.parse(last),
+                progressColor: Colors.green,
+              ))
             ]))));
   }
 }
