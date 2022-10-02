@@ -11,12 +11,21 @@ class slider extends StatefulWidget {
   State<slider> createState() => _sliderState();
 }
 
+class Person {
+  final int year;
+  final int ssp;
+
+  Person(this.year, this.ssp);
+}
+
 class _sliderState extends State<slider> {
   double _value = 2022;
   //double _newvalue = 2;
   double value = 0;
   @override
   Widget build(BuildContext context) {
+    int x = 0;
+    int y = 0;
     return Container(
         child: Scaffold(
       backgroundColor: const Color.fromARGB(255, 60, 52, 52),
@@ -76,7 +85,7 @@ class _sliderState extends State<slider> {
                     onChanged: (dynamic value) {
                       setState(() {
                         _value = value;
-                        int x = _value.toInt();
+                        x = _value.toInt();
                         if (x >= 2020 && x < 2026) {
                           x = 2020;
                         } else if (x >= 2026 && x < 2036) {
@@ -128,7 +137,7 @@ class _sliderState extends State<slider> {
                       onChanged: (val) {
                         setState(() {
                           value = val;
-                          int y = value.toInt();
+                          y = value.toInt();
                           if (y >= 0 && y <= 2) {
                             y = 1;
                           } else if (y > 2 && y <= 4) {
@@ -168,9 +177,9 @@ class _sliderState extends State<slider> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        new MaterialPageRoute(
                             builder: (context) =>
-                                const finalpage(person: new Person(x, y))),
+                                new finalpage(person: Person(x, y))),
                       );
                     },
                   ),
@@ -182,13 +191,6 @@ class _sliderState extends State<slider> {
       ),
     ));
   }
-}
-
-class Person {
-  final int year;
-  final int ssp;
-
-  Person(this.year, this.ssp);
 }
 
 class GradientRectSliderTrackShape extends SliderTrackShape
