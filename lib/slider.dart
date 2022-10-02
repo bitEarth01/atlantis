@@ -50,7 +50,8 @@ class _sliderState extends State<slider> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const finalpage()),
+                            builder: (context) =>
+                                const finalpage(person: new Person(x, y))),
                       );
                     },
                   ),
@@ -101,6 +102,25 @@ class _sliderState extends State<slider> {
                       setState(() {
                         _value = value;
                         int x = _value.toInt();
+                        if (x >= 2020 && x < 2026) {
+                          x = 2020;
+                        } else if (x >= 2026 && x < 2036) {
+                          x = 2030;
+                        } else if (x >= 2036 && x < 2046) {
+                          x = 2040;
+                        } else if (x >= 2046 && x < 2056) {
+                          x = 2050;
+                        } else if (x >= 2056 && x < 2066) {
+                          x = 2060;
+                        } else if (x >= 2066 && x < 2076) {
+                          x = 2070;
+                        } else if (x >= 2076 && x < 2086) {
+                          x = 2080;
+                        } else if (x >= 2086 && x < 2096) {
+                          x = 2090;
+                        } else if (x >= 2096 && x < 2099) {
+                          x = 2100;
+                        }
                         debugPrint('$x');
                       });
                     },
@@ -134,6 +154,15 @@ class _sliderState extends State<slider> {
                         setState(() {
                           value = val;
                           int y = value.toInt();
+                          if (y >= 0 && y <= 2) {
+                            y = 1;
+                          } else if (y > 2 && y <= 4) {
+                            y = 2;
+                          } else if (y > 4 && y <= 6) {
+                            y = 3;
+                          } else if (y > 6 && y <= 8) {
+                            y = 5;
+                          }
                           debugPrint('$y');
                         });
                       },
