@@ -1,7 +1,7 @@
 # atlantis
 
 - This project is made for nasa space app challange 2022 for the task-"Take Flight: Making the Most of NASA’s Airborne Data
-
+- [Project Details](https://www.canva.com/design/DAFNxthwaus/ibYStoQVWF2zweZ8q8mh5w/view?utm_content=DAFNxthwaus&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton4)
 
 ### HIGH-LEVEL PROJECT SUMMARY
 
