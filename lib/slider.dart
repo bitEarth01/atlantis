@@ -440,7 +440,7 @@ class _finalpageState extends State<finalpage> {
                     padding: EdgeInsets.only(top: 10),
                     child: Center(
                       child: Text(
-                        "Land Lost is",
+                        "Change in Altitude",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontStyle: FontStyle.italic,
