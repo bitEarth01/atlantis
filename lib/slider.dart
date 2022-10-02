@@ -20,7 +20,7 @@ class _sliderState extends State<slider> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/back1.jpg"), fit: BoxFit.cover),
+            image: AssetImage("assets/back2.jpg"), fit: BoxFit.cover),
       ),
     );
   }
