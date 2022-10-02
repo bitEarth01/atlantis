@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'slider.dart';
 
 class finalpage extends StatefulWidget {
-  const finalpage({super.key});
+  const finalpage({super.key, required Person person});
 
   @override
   State<finalpage> createState() => _finalpageState();
