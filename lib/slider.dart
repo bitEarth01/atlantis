@@ -33,31 +33,6 @@ class _sliderState extends State<slider> {
                 Navigator.pop(context);
               },
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 1, right: 60),
-              child: SizedBox(
-                child: Container(
-                  alignment: Alignment.bottomRight,
-                  child: FloatingActionButton.extended(
-                    label: const Text('      Continue        '), // <-- Text
-                    backgroundColor: Colors.black,
-                    icon: const Icon(
-                      // <-- Icon
-                      Icons.arrow_forward,
-                      size: 38.0,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const finalpage(person: new Person(x, y))),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
             Column(
               children: const [
                 Padding(
@@ -176,6 +151,31 @@ class _sliderState extends State<slider> {
                             fontSize: 15,
                             color: Colors.white))),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 1, right: 60),
+              child: SizedBox(
+                child: Container(
+                  alignment: Alignment.bottomRight,
+                  child: FloatingActionButton.extended(
+                    label: const Text('      Continue        '), // <-- Text
+                    backgroundColor: Colors.black,
+                    icon: const Icon(
+                      // <-- Icon
+                      Icons.arrow_forward,
+                      size: 38.0,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const finalpage(person: new Person(x, y))),
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
           ],
         ),
