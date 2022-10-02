@@ -17,13 +17,30 @@ class _finalpageState extends State<finalpage> {
             body: SafeArea(
                 child: Stack(alignment: Alignment.topLeft, children: [
               IconButton(
-                padding: EdgeInsets.only(left: 50),
                 iconSize: 38,
                 color: const Color.fromARGB(255, 237, 230, 230),
                 icon: const Icon(Icons.arrow_back),
                 onPressed: () {
                   Navigator.pop(context);
                 },
+              ),
+              Column(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Center(
+                      child: Text(
+                        "Land Lost",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ]))));
   }
