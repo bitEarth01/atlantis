@@ -1,3 +1,5 @@
+import 'package:sample_app/finalpage.dart';
+
 import 'Home.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
@@ -20,15 +22,40 @@ class _sliderState extends State<slider> {
       backgroundColor: const Color.fromARGB(255, 60, 52, 52),
       body: SafeArea(
         child: Stack(
-          alignment: Alignment.topLeft,
+          alignment: Alignment.bottomLeft,
           children: [
             IconButton(
+              padding: EdgeInsets.only(left: 50),
               iconSize: 38,
               color: const Color.fromARGB(255, 237, 230, 230),
               icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.pop(context);
               },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 1, right: 60),
+              child: SizedBox(
+                child: Container(
+                  alignment: Alignment.bottomRight,
+                  child: FloatingActionButton.extended(
+                    label: const Text('      Continue        '), // <-- Text
+                    backgroundColor: Colors.black,
+                    icon: const Icon(
+                      // <-- Icon
+                      Icons.arrow_forward,
+                      size: 38.0,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const finalpage()),
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
             Column(
               children: const [
