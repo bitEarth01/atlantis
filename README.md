@@ -65,7 +65,7 @@ The hackathon journey was pretty good. We worked hard without sleep for two days
 ### REFERRED DATA FILES
 - [tas_global_SSPtemps](https://github.com/bitEarth01/atlantis/blob/main/tas_global_SSPtemps.csv)
 - [global_sea_level_projected](https://github.com/bitEarth01/atlantis/blob/main/global_sea_level_projected.csv)
-- [altitudes and latlon](https://github.com/bitEarth01/atlantis/blob/main/altitudes%20and%20latlon.xlsx)
+- [altitudes and latlon](
 
 ### REFERENCES
 - https://2022.spaceappschallenge.org/challenges/2022-challenges/take-flight/teams/bitearth/members
