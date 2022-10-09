@@ -16,7 +16,10 @@ https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-
 
 
 ### Screenshots of UI
-![](ss1.png)
+<img src="ss1.png" alt="drawing" width="200"/>
+<img src="ss2.png" alt="drawing" width="200"/>
+<img src="ss3.png" alt="drawing" width="200"/>
+<img src="ss4.png" alt="drawing" width="200"/>
 
 ### DETAILED PROJECT DESCRIPTION
 
