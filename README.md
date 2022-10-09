@@ -7,13 +7,15 @@
 
 Are you planning to visit Hawaii? You might not be able to go, Hawaii is particularly vulnerable to an increased rate of sea level rise in the future . If this is the case, we may have to change our way of life. Hawaii was just an example, the sea level increase is affecting many areas, but you may not know HOW MUCH and cant predict the increase in sea level in the near future. Thats why we have created an app with the help of the nasa campaign data. The ATLANTIS app is developed by our team to help people know the carbon footprint and understand the increase in sea-level easily. This App was developed using Flutter Framework. This application is a cross-platform application.
 
+### Screenshots of UI
+
+splash screen|main page|location-selection|providing parameters|final output
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](assets/ss5.png)|![](assets/ss1.png)|![](assets/ss2.png)|![](assets/ss3.png)|![](assets/ss4.png)
 
 ### PROJECT DEMO
 
-
-
 https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-8495-7f48cf91ff12.mp4
-
 
 
 ### DETAILED PROJECT DESCRIPTION
