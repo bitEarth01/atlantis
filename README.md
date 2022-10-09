@@ -9,20 +9,20 @@ Are you planning to visit Hawaii? You might not be able to go, Hawaii is particu
 
 ### Screenshots of UI
 
-splash screen|main page|location-selection|providing parameters|final output
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](assets/ss5.png)|![](assets/ss1.png)|![](assets/ss2.png)|![](assets/ss3.png)|![](assets/ss4.png)
+<tr>
+  </td><td><img src="assets/ss1.png"height=480></td><td><img src="assets/ss2.png"  height=480></td><td><img src="assets/ss3.png"  height=480></td><td><img src="assets/ss4.png" height=480></td>
+  </tr>
 
 ### PROJECT DEMO
 
 https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-8495-7f48cf91ff12.mp4
-
 
 ### DETAILED PROJECT DESCRIPTION
 
 What does our app do ?
 
 Our app will take these input from the user :
+
 - Location
 - Altitude
 - Year
@@ -65,11 +65,13 @@ We thank NASA for giving us the data which helped us developing our project.
 The hackathon journey was pretty good. We worked hard without sleep for two days, analyzed, and gained knowledge about the things we never touched in our life. We found we had more potential than we think. The most important thing is we got confidence in our life that we succeed in our life with our knowledge and skill,
 
 ### REFERRED DATA FILES
+
 - [tas_global_SSPtemps](https://github.com/bitEarth01/atlantis/blob/main/tas_global_SSPtemps.csv)
 - [global_sea_level_projected](https://github.com/bitEarth01/atlantis/blob/main/global_sea_level_projected.csv)
 - [altitudes and latlon](https://github.com/bitEarth01/atlantis/blob/main/altitudes%20and%20latlon.csv)
 
 ### REFERENCES
+
 - https://2022.spaceappschallenge.org/challenges/2022-challenges/take-flight/teams/bitearth/members
 - https://daac.ornl.gov/cgi-bin/dataset_lister.pl?p=34
 - https://www.dkrz.de/en/communication/climate-simulations/cmip6-en/the-ssp-scenarios
