@@ -16,7 +16,7 @@ https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-
 
 
 ### Screenshots of UI
-
+![](ss1.png)
 
 ### DETAILED PROJECT DESCRIPTION
 
