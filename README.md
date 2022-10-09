@@ -16,6 +16,20 @@ https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-
 
 
 ### Screenshots of UI
+
+<div class="row">
+  <div class="column">
+    <img src="assets/ss1.png" alt="Snow" width="200">
+  </div>
+  <div class="column">
+    <img src="assets/ss2.png" alt="Forest" width="200">
+  </div>
+  <div class="column">
+    <img src="assets/ss3.png" alt="Mountains" width="200">
+  </div>
+</div>
+
+
 <img src="assets/ss1.png" alt="drawing" width="200"/>
 <img src="assets/ss2.png" alt="drawing" width="200"/>
 <img src="assets/ss3.png" alt="drawing" width="200"/>
