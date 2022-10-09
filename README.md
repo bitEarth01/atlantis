@@ -13,6 +13,8 @@ splash screen|main page|location-selection|providing parameters|final output
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](assets/ss5.png)|![](assets/ss1.png)|![](assets/ss2.png)|![](assets/ss3.png)|![](assets/ss4.png)
 
+
+
 ### PROJECT DEMO
 
 https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-8495-7f48cf91ff12.mp4
