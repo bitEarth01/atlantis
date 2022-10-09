@@ -15,6 +15,8 @@ Are you planning to visit Hawaii? You might not be able to go, Hawaii is particu
 https://user-images.githubusercontent.com/83648898/193469435-47f2b628-a848-4b50-8495-7f48cf91ff12.mp4
 
 
+### Screenshots of UI
+
 
 ### DETAILED PROJECT DESCRIPTION
 
